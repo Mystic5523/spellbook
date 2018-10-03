@@ -3,6 +3,8 @@ import './App.css';
 import MyNavBar from './MyNavBar';
 import MyJumbo from './MyJumbo';
 import AllSpell from './AllSpell';
+
+
 class App extends Component {
   render() {
     return (
