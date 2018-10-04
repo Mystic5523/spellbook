@@ -1,5 +1,8 @@
 # spellbook
 
+[Flowchart](Spellbook_flowchart.pdf)
+[Assignments](Project_Managment.png)
+
 Must use ReactJS.
 
 Must use a Node and Express Web Server.
