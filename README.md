@@ -1,7 +1,7 @@
 # spellbook
 
-[Flowchart](Spellbook_flowchart.pdf)
-[Assignments](Project_Managment.png)
+[Flowchart](/documentation/spellbook_flowchart.pdf)
+[Assignments](/documentation/project_managment.png)
 
 Must use ReactJS.
 
