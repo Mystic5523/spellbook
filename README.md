@@ -25,7 +25,7 @@ Must have folder structure that meets MVC Paradigm.
 
 Must meet good quality coding standards (indentation, scoping, naming).
 
-**Week 1 Deliverables**
+**Week 1 Deliverables** **done**
 An overview of the intended application and WHY you feel it's valuable.
 
 A breakdown of roles by group member.
