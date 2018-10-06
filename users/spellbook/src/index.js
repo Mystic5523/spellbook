@@ -1,3 +1,4 @@
+// import overall css file needs to be added. 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
