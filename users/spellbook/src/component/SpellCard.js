@@ -1,3 +1,4 @@
+// boilerplate card from react strap that needs to be modified for our use
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
