@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-const SpellSchema = new mongoose.Schema({
+const UserSpells = new mongoose.Schema ({
     name: {
         type: String,
         default: ''
@@ -53,6 +52,7 @@ const SpellSchema = new mongoose.Schema({
     }
 });
 
-const Spells = mongoose.model("Spells", SpellSchema);
 
-module.export = Spells;
+const uSpells = mongoose.model("uSpells", UserSpells);
+
+module.export = uSpells;
