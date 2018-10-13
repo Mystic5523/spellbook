@@ -4,6 +4,8 @@ const bodyparser = require("body-parser");
 const session = require("express-session");
 const cors = require("cors");
 const controller = require("./controller");
+const PORT = process.env.PORT || 3000;
+
 
 const app = express();
 
@@ -29,4 +31,6 @@ app.use(
 );
 controller(app);
 
-app.listen(process.env.PORT || 8000, () => console.log("Listening..."));
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
