@@ -72,6 +72,7 @@ module.exports = function(app) {
   }
 
   app.post("/api/register", regValidation, register);
+  
   app.get("/", (req, res) => res.json("sdasdsa"));
   //---------------------------------------------
   const logValidation = [
