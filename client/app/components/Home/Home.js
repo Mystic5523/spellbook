@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import { Container, Row, Col, Jumbotron, ListGroup, ListGroupItem } from 'reactstrap';
 
 import {
   getFromStorage,
@@ -25,7 +26,7 @@ class Home extends Component {
     this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
     this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
     this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
-    
+
     this.onSignIn = this.onSignIn.bind(this);
     this.onSignUp = this.onSignUp.bind(this);
     this.logout = this.logout.bind(this);
@@ -263,10 +264,24 @@ class Home extends Component {
     }
 
     return (
-      <div>
-        <p>Account</p>
-        <button onClick={this.logout}>Logout</button>
-      </div>
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            <Jumbotron>
+              <div>
+                <p>Account</p>
+                <button onClick={this.logout}>Logout</button>
+              </div>
+              <ListGroup>
+                <ListGroupItem>
+                  {/* {props.children} */}
+                </ListGroupItem>
+              </ListGroup>
+            </Jumbotron>
+          </Col>
+        </Row>
+      </Container>
+
     );
   }
 }
