@@ -2,8 +2,17 @@
 
 @import 'vendor/normalize';
 
+.cardtext {
+    text-overflow: ellipsis;
+    color: red;
+}
+
+@import "~bootstrap/scss/bootstrap";
+
 body {
     background-color: whitesmoke;
     color: darkslategrey;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+

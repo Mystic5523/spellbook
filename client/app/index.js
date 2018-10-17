@@ -16,6 +16,7 @@ import Home from './components/Home/Home';
 import HelloWorld from './components/HelloWorld/HelloWorld';
 
 import './styles/styles.scss';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 render((
   <Router>
