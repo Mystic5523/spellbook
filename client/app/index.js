@@ -14,6 +14,10 @@ import NotFound from './components/App/NotFound';
 import Home from './components/Home/Home';
 
 import HelloWorld from './components/HelloWorld/HelloWorld';
+import Userpage from './views/Userpage';
+import Spelllist from './views/Spelllist';
+import Spellbook from './views/Spellbook';
+
 
 import './styles/styles.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,7 +27,10 @@ render((
     <App>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/helloworld" component={HelloWorld}/>
+        <Route exact path="/helloworld" component={HelloWorld}/>
+        <Route exact path='/users' component={Userpage} />
+        <Route exact path='/list' component={Spelllist} />
+        <Route exact path='/book' component={Spellbook} />
         <Route component={NotFound}/>
       </Switch>
     </App>
