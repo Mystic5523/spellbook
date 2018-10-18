@@ -264,23 +264,10 @@ class Home extends Component {
     }
 
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <div>
-                <p>Account</p>
-                <button onClick={this.logout}>Logout</button>
-              </div>
-              <ListGroup>
-                <ListGroupItem>
-                  {/* {props.children} */}
-                </ListGroupItem>
-              </ListGroup>
-            </Jumbotron>
-          </Col>
-        </Row>
-      </Container>
+      <div>
+        <p>Account</p>
+        <button onClick={this.logout}>Logout</button>
+      </div>
 
     );
   }
