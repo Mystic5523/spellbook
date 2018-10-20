@@ -1,3 +1,3 @@
 module.exports = {
-    Spell: require("./spells")
+    Spell: require("./Spells")
 };

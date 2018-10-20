@@ -28,7 +28,7 @@ render((
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/helloworld" component={HelloWorld}/>
-        <Route exact path='/users' component={Userpage} />
+        <Route exact path='/user' component={Userpage} />
         <Route exact path='/list' component={Spelllist} />
         <Route exact path='/book' component={Spellbook} />
         <Route component={NotFound}/>

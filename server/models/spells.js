@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
 
-const SpellSchema = new Schema({
+const SpellSchema = new mongoose.Schema({
     name: {
         type: String,
         default: ''
@@ -53,6 +53,8 @@ const SpellSchema = new Schema({
     }
 });
 
-const Spell = mongoose.model("Spell", SpellSchema);
+// module.exports = mongoose.model('Spells', SpellSchema);
 
-module.export = Spell;
+const Spells = mongoose.model("Spells", SpellSchema);
+
+module.export = Spells;

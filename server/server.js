@@ -28,7 +28,7 @@ app.use(express.json());
 
 // API routes
 require('./routes')(app);
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spellList");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spellList");
 
 if (isDev) {
   const compiler = webpack(webpackConfig);

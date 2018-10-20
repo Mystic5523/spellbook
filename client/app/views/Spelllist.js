@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Table, Label, Input } from 'reactstrap';
 
-  
+
 
 class Spelllist extends Component {
     // state = {
@@ -34,31 +34,34 @@ class Spelllist extends Component {
                                         <td>No</td>
                                         <td>No</td>
                                         <td>Transmutation</td>
-                                        <td><Label check>
-                                            <Input type="checkbox" />{' '}
-                                        </Label></td>
+                                        <td><label class="check">
+                                            <input type="checkbox" />
+                                            <span class="checkmark"></span>
+                                        </label></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">2</th>
                                         <td>1</td>
                                         <td>Magic Missile</td>
                                         <td>No</td>
                                         <td>No</td>
                                         <td>Evocation</td>
-                                        <td><Label check>
-                                            <Input type="checkbox" />{' '}
-                                        </Label></td>
+                                        <td><label class="check">
+                                            <input type="checkbox" />
+                                            <span class="checkmark"></span>
+                                        </label></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">3</th>
                                         <td>2</td>
                                         <td>Invisibility</td>
                                         <td>Yes</td>
                                         <td>No</td>
                                         <td>Illusion</td>
-                                        <td><Label check>
-                                            <Input type="checkbox" />{' '}
-                                        </Label></td>
+                                        <td><label class="check">
+                                            <input type="checkbox" />
+                                            <span class="checkmark"></span>
+                                        </label></td>
                                     </tr>
                                 </tbody>
                             </Table>
