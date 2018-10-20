@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const router = require('express').Router();
+const spellRoutes = require('./api/spells');
 
-module.exports = (app) => {
-  // API routes
-  fs.readdirSync(__dirname + '/api/').forEach((file) => {
-    require(`./api/${file.substr(0, file.indexOf('.'))}`)(app);
-  });
-};
+router.use('/spells', spellRoutes)
+
+module.exports = router;

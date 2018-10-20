@@ -51,10 +51,10 @@ const SpellSchema = new mongoose.Schema({
     classes: {
         type: Array,
     }
-});
+}, {collection: 'spelllist' });
 
-// module.exports = mongoose.model('Spells', SpellSchema);
+module.exports = mongoose.model('Spelllist', SpellSchema);
 
-const Spells = mongoose.model("Spells", SpellSchema);
+// const Spells = mongoose.model("Spells", SpellSchema);
 
-module.export = Spells;
+// export default Spells;

@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // API routes
-require('./routes')(app);
+app.use("/api", require('./routes'));
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/spellList");
 
 if (isDev) {
