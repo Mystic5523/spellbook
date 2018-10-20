@@ -5,12 +5,38 @@ import {
     Card, CardImg, CardTitle, CardText, CardColumns,
     CardSubtitle, CardBody
 } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
 class Userpage extends Component {
-    // state = {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false
+        };
 
-    // }
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+    handleFormSubmit() {
+        event.preventDefault();
+        if (this.state.name && this.state.level) {
+            API.saveChar({
+                name: this.state.name,
+                race: this.state.race,
+                class: this.state.class,
+                level: this.state.level
+            })
+                .then(res => this.loadBooks())
+                .catch(err => console.log(err));
+        }
+    };
 
     render() {
         return (
@@ -20,26 +46,75 @@ class Userpage extends Component {
                         <div>
                             <Jumbotron>
                                 <h1 className="display-3">Welcome, User!</h1>
-                                <p className="lead">Build your chracter:</p>
+                                <p className="lead">Select your chracter:</p>
                                 <h3>Characters </h3>
                                 <ListGroup>
                                     <ListGroupItem tag="button" action>Character 1</ListGroupItem>
                                     <ListGroupItem tag="button" action>Merlin</ListGroupItem>
                                     <ListGroupItem tag="button" action>Gandalf</ListGroupItem>
                                     <ListGroupItem tag="button" action>Joe</ListGroupItem>
-                                    <ListGroupItem disabled tag="button" action>Character X</ListGroupItem>
+                                    <ListGroupItem tag="button" action>Character X</ListGroupItem>
                                 </ListGroup>
                                 <hr className="my-2" />
                                 <p className="lead">
-                                    <Button color="primary">New Character</Button>
+                                    <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}New Character</Button>
                                 </p>
                             </Jumbotron>
                         </div>
                     </Col>
                 </Row>
+                <div>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                        <ModalHeader toggle={this.toggle}>Build your Character</ModalHeader>
+                        <ModalBody>
+                            <Form>
+                                <FormGroup>
+                                    <Label for="characterName">Name</Label>
+                                    <Input type="text" name="name" id="characterName" placeholder="Character's Name" />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="characterRace">Race</Label>
+                                    <Input type="select" name="race" id="race">
+                                        <option value="">Select</option>
+                                        <option>Human</option>
+                                        <option>Elf</option>
+                                        <option>Dwarf</option>
+                                        <option>Halfling</option>
+                                        <option>Gnome</option>
+                                    </Input>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="characterClass">Class</Label>
+                                    <Input type="select" name="class" id="class">
+                                        <option value="">Select</option>
+                                        <option>Wizard</option>
+                                        <option>Cleric</option>
+                                        <option>Warlock</option>
+                                        <option>Sorcerer</option>
+                                    </Input>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="characterLevel">Level</Label>
+                                    <Input type="select" name="level" id="level">
+                                        <option value="">Select</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </Input>
+                                </FormGroup>
+                            </Form>                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
+                            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+                        </ModalFooter>
+                    </Modal>
+                </div>
             </Container>
-        )
-    };
-};
+
+        );
+    }
+}
 
 export default Userpage;

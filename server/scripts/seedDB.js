@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/spellList"
+  "mongodb://localhost/login_demo_db"
 );
 
 
@@ -209,9 +209,9 @@ const spellSeed = [
   }
 ];
 
-db.Spell
+db.Spells
 .remove({})
-.then(() => db.Spell.collection.insertMany(spellSeed))
+.then(() => db.Spells.collection.insertMany(spellSeed))
 .then (data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
