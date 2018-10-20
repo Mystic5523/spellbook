@@ -8,7 +8,9 @@ class Spelllist extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            spells: []
+            spells: [],
+            selected: {},
+            selectAll: false,
         }
     }
 
@@ -20,12 +22,38 @@ class Spelllist extends Component {
         )
     }
 
+    selectSpell(spell){
+        const selected = this.state.selected;
+        if(!!selected[spell._id]){
+            delete selected[spell._id];
+            return this.setState({selected: selected, selectAll: false});
+        }
+
+        selected[spell._id]= spell;
+        this.setState({selected: selected});
+
+    }
+
+    selectAll(){
+        const selected = {};
+
+        if(this.state.selectAll){
+            return this.setState({selected: selected, selectAll: !this.state.selectAll});
+        }
+
+        this.state.spells.forEach(spell => {
+            selected[spell._id] = spell
+        });
+        this.setState({selected: selected, selectAll: !this.state.selectAll});
+    }
+
     render() {
         return (
             <Container fluid={true}>
                 <Row>
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
                         <div>
+                            <div>Selected ({Object.values(this.state.selected).length})</div>
                             <Table hover responsive>
                                 <thead>
                                     <tr>
@@ -34,14 +62,18 @@ class Spelllist extends Component {
                                         <th>Concentration</th>
                                         <th>Ritual</th>
                                         <th>School</th>
-                                        <th>Selected</th>
+                                        <th>
+                                            <label className="check">
+                                                <input type="checkbox" onChange={this.selectAll.bind(this)} checked={this.state.selectAll}/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     {this.state.spells.length ?
                                         this.state.spells.map(spell => {
-                                            console.log(spell)
                                             return (
                                                 <tr key={spell._id} scope="row">
                                                     <th >
@@ -54,9 +86,9 @@ class Spelllist extends Component {
                                                     <td>{spell.ritual}</td>
                                                     <td>{spell.school}</td>
                                                     <td>
-                                                        <label class="check">
-                                                            <input type="checkbox" />
-                                                            <span class="checkmark"></span>
+                                                        <label className="check">
+                                                            <input type="checkbox" onChange={this.selectSpell.bind(this,spell)} checked={!!this.state.selected[spell._id]}/>
+                                                            <span className="checkmark"></span>
                                                         </label>
                                                     </td>
                                                 </tr>
@@ -72,9 +104,9 @@ class Spelllist extends Component {
                                                 <td>No</td>
                                                 <td>No</td>
                                                 <td>Transmutation</td>
-                                                <td><label class="check">
+                                                <td><label className="check">
                                                     <input type="checkbox" />
-                                                    <span class="checkmark"></span>
+                                                    <span className="checkmark"></span>
                                                 </label></td>
                                             </tr>
                                         )
