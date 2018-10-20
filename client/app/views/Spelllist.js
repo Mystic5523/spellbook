@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Table, Label, Input } from 'reactstrap';
-
+import { Container, Row, Col, Table, Button, Label, Input } from 'reactstrap';
+import {Link} from "react-router-dom";
+import API from '../components/utils/API'
 
 
 class Spelllist extends Component {
-    // state = {
+    constructor(props) {
+        super(props)
+        this.state = {
+            spells: []
+        }
+    }
 
-    // }
+    componentDidMount() {
+        API.getSpells().then(res => {
+            console.log(res);
+            this.setState({ spells: res.data });
+        }
+        )
+    }
 
     render() {
         return (
@@ -17,7 +29,6 @@ class Spelllist extends Component {
                             <Table hover responsive>
                                 <thead>
                                     <tr>
-                                        <th>#</th>
                                         <th>Level</th>
                                         <th>Name</th>
                                         <th>Concentration</th>
@@ -27,44 +38,52 @@ class Spelllist extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>0</td>
-                                        <td>Prestidigitation</td>
-                                        <td>No</td>
-                                        <td>No</td>
-                                        <td>Transmutation</td>
-                                        <td><label class="check">
-                                            <input type="checkbox" />
-                                            <span class="checkmark"></span>
-                                        </label></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>1</td>
-                                        <td>Magic Missile</td>
-                                        <td>No</td>
-                                        <td>No</td>
-                                        <td>Evocation</td>
-                                        <td><label class="check">
-                                            <input type="checkbox" />
-                                            <span class="checkmark"></span>
-                                        </label></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>2</td>
-                                        <td>Invisibility</td>
-                                        <td>Yes</td>
-                                        <td>No</td>
-                                        <td>Illusion</td>
-                                        <td><label class="check">
-                                            <input type="checkbox" />
-                                            <span class="checkmark"></span>
-                                        </label></td>
-                                    </tr>
+
+                                    {this.state.spells.length ?
+                                        this.state.spells.map(spell => {
+                                            console.log(spell)
+                                            return (
+                                                <tr key={spell._id} scope="row">
+                                                    <th >
+                                                        <Link to={"/spells/" + spell._id}>
+                                                            {spell.level}                                                           
+                                                        </Link>
+                                                    </th>
+                                                    <td>{spell.name}</td>
+                                                    <td>{spell.concentration}</td>
+                                                    <td>{spell.ritual}</td>
+                                                    <td>{spell.school}</td>
+                                                    <td>
+                                                        <label class="check">
+                                                            <input type="checkbox" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+
+                                            )
+                                        })
+                                        :
+                                        (
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>0</td>
+                                                <td>Prestidigitation</td>
+                                                <td>No</td>
+                                                <td>No</td>
+                                                <td>Transmutation</td>
+                                                <td><label class="check">
+                                                    <input type="checkbox" />
+                                                    <span class="checkmark"></span>
+                                                </label></td>
+                                            </tr>
+                                        )
+                                    }
                                 </tbody>
                             </Table>
+                            <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
+                            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+
                         </div>
                     </Col>
                 </Row>
