@@ -16,7 +16,6 @@ class Spelllist extends Component {
 
     componentDidMount() {
         API.getSpells().then(res => {
-            console.log(res);
             this.setState({ spells: res.data });
         }
         )
@@ -100,7 +99,7 @@ class Spelllist extends Component {
                                             <tr>
                                                 <th scope="row">1</th>
                                                 <td>0</td>
-                                                <td>Prestidigitation</td>
+                                                <td>Didn't Load</td>
                                                 <td>No</td>
                                                 <td>No</td>
                                                 <td>Transmutation</td>
