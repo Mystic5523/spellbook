@@ -2,9 +2,28 @@
 
 @import 'vendor/normalize';
 
-.cardtext {
-    text-overflow: ellipsis;
-    color: red;
+.card {
+    max-width: 350px;
+    max-height: 350px;
+    margin-top: 2em;
+
+    .card-text {
+        max-height: 150px;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+
+    .lvl {
+        color: red;
+    }
+
+    .conc {
+        color: blue;
+    }
+
+    .rit {
+        color: orange;
+    }
 }
 
 @import "~bootstrap/scss/bootstrap";

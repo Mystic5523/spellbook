@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Jumbotron, Table, ListGroup, ListGroupItem } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {
-    Card, CardImg, CardTitle, CardText, CardColumns,
-    CardSubtitle, CardBody
-} from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import API from '../components/utils/API'
+
 
 
 class Userpage extends Component {
@@ -48,12 +46,20 @@ class Userpage extends Component {
                                 <h1 className="display-3">Welcome, User!</h1>
                                 <p className="lead">Select your chracter:</p>
                                 <h3>Characters </h3>
+                                
                                 <ListGroup>
-                                    <ListGroupItem tag="button" action>Character 1</ListGroupItem>
-                                    <ListGroupItem tag="button" action>Merlin</ListGroupItem>
-                                    <ListGroupItem tag="button" action>Gandalf</ListGroupItem>
-                                    <ListGroupItem tag="button" action>Joe</ListGroupItem>
-                                    <ListGroupItem tag="button" action>Character X</ListGroupItem>
+                                {/* <Link to={"/chars/" + char._id}>{char.name}</Link>
+                                    {this.state.chars.length ?
+                                        this.state.chars.map(char => {
+                                            return (
+                                                <ListGroupItem tag="button" action>{char.name}, {char.race}, {char.class}, {char.level} </ListGroupItem>
+                                            )
+                                        // })
+                                        : */}
+                                        {/* ( */}
+                                            <ListGroupItem tag="button" action>Didn't Load</ListGroupItem>
+                                        {/* ) */}
+                                    {/* } */}
                                 </ListGroup>
                                 <hr className="my-2" />
                                 <p className="lead">
