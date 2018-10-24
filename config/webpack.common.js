@@ -16,6 +16,7 @@ module.exports = {
     ]
   },
 
+  
   output: {
     path: helpers.root('dist'),
     publicPath: '/'
@@ -35,6 +36,13 @@ module.exports = {
         test: /\.jsx?$/,
         include: helpers.root('client'),
         loader: 'babel-loader'
+      },
+
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
       },
 
       // SCSS files

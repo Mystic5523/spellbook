@@ -1,11 +1,11 @@
 {
-  "name": "MERN-boilerplate",
+  "name": "Spellbook",
   "version": "1.0.0",
-  "description": "MERN stack project boilerplate",
+  "description": "Full-stack spellbook",
   "author": "Eugene Cheung",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arkon/MERN-boilerplate.git"
+    "url": "git+https://github.com/Mystic5523/spellbook"
   },
   "license": "MIT",
   "private": true,
@@ -49,5 +49,8 @@
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.2",
     "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "file-loader": "^2.0.0"
   }
 }

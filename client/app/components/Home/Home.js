@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import { Container, Row, Col, Jumbotron, ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, Row, Col, Jumbotron, FormGroup, Form, FormText, Button } from 'reactstrap';
 
 import {
   getFromStorage,
@@ -211,55 +211,66 @@ class Home extends Component {
 
     if (!token) {
       return (
-        <div>
-          <div>
-            {
-              (signInError) ? (
-                <p>{signInError}</p>
-              ) : (null)
-            }
-            <p>Sign In</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signInEmail}
-              onChange={this.onTextboxChangeSignInEmail}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signInPassword}
-              onChange={this.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button onClick={this.onSignIn}>Sign In</button>
-          </div>
-          <br />
-          <br />
-          <div>
-            {
-              (signUpError) ? (
-                <p>{signUpError}</p>
-              ) : (null)
-            }
-            <p>Sign Up</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signUpEmail}
-              onChange={this.onTextboxChangeSignUpEmail}
-            /><br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signUpPassword}
-              onChange={this.onTextboxChangeSignUpPassword}
-            /><br />
-            <button onClick={this.onSignUp}>Sign Up</button>
-          </div>
+        <Container fluid={true}>
+          <Row>
+            <Col sm="12" md={{ size: 10, offset: 1 }}>
+              <Jumbotron>
+                <h1 className="display-3">Welcome!!</h1>
+                <Row>
+                  <div>
+                    <div>
+                      {
+                        (signInError) ? (
+                          <p>{signInError}</p>
+                        ) : (null)
+                      }
+                      <p>Sign In</p>
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={signInEmail}
+                        onChange={this.onTextboxChangeSignInEmail}
+                      />
+                      <br />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        value={signInPassword}
+                        onChange={this.onTextboxChangeSignInPassword}
+                      />
+                      <br />
+                      <Button onClick={this.onSignIn}>Sign In</Button>
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                      {
+                        (signUpError) ? (
+                          <p>{signUpError}</p>
+                        ) : (null)
+                      }
+                      <p>Sign Up</p>
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={signUpEmail}
+                        onChange={this.onTextboxChangeSignUpEmail}
+                      /><br />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        value={signUpPassword}
+                        onChange={this.onTextboxChangeSignUpPassword}
+                      /><br />
+                      <Button onClick={this.onSignUp}>Sign Up</Button>
+                    </div>
 
-        </div>
+                  </div>
+                </Row>
+              </Jumbotron>
+            </Col>
+          </Row>
+        </Container >
       );
     }
 
