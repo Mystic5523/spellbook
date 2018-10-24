@@ -18,9 +18,7 @@ import Userpage from './views/Userpage';
 import Spelllist from './views/Spelllist';
 import Spellbook from './views/Spellbook';
 
-
 import './styles/styles.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 render((
   <Router>

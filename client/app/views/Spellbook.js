@@ -36,10 +36,11 @@ class Spellbook extends Component {
         )
     }
     renderModal() {
-       return (<div>
+        return (<div>
             <Modal isOpen={this.state.modal} className={this.props.className}>
                 <ModalHeader>{this.state.modalSpell ? this.state.modalSpell.name : ''}</ModalHeader>
                 <ModalBody>{this.state.modalSpell.desc}</ModalBody>
+                <ModalBody>{this.state.modalSpell ? this.state.modalSpell.higher_level : ''}</ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
                 </ModalFooter>
@@ -92,7 +93,7 @@ class Spellbook extends Component {
                         </Jumbotron>
                     </Col>
                 </Row>
-               {this.state.modal ? this.renderModal() : <div/>}
+                {this.state.modal ? this.renderModal() : <div/>}
             </Container >
         )
     };

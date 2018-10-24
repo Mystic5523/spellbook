@@ -44,11 +44,11 @@ class Userpage extends Component {
                         <div>
                             <Jumbotron>
                                 <h1 className="display-3">Welcome, User!</h1>
-                                <p className="lead">Select your chracter:</p>
+                                <p className="lead">Select your character:</p>
                                 <h3>Characters </h3>
-                                
+
                                 <ListGroup>
-                                {/* <Link to={"/chars/" + char._id}>{char.name}</Link>
+                                    {/* <Link to={"/chars/" + char._id}>{char.name}</Link>
                                     {this.state.chars.length ?
                                         this.state.chars.map(char => {
                                             return (
@@ -56,9 +56,9 @@ class Userpage extends Component {
                                             )
                                         // })
                                         : */}
-                                        {/* ( */}
-                                            <ListGroupItem tag="button" action>Didn't Load</ListGroupItem>
-                                        {/* ) */}
+                                    {/* ( */}
+                                    <ListGroupItem tag="button" action>Didn't Load</ListGroupItem>
+                                    {/* ) */}
                                     {/* } */}
                                 </ListGroup>
                                 <hr className="my-2" />
@@ -110,7 +110,8 @@ class Userpage extends Component {
                                         <option>5</option>
                                     </Input>
                                 </FormGroup>
-                            </Form>                        </ModalBody>
+                            </Form>
+                        </ModalBody>
                         <ModalFooter>
                             <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
                             <Button color="danger" onClick={this.toggle}>Cancel</Button>
