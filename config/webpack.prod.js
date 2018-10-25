@@ -8,8 +8,11 @@ module.exports = merge(commonConfig, {
   mode: 'production',
 
   output: {
-    filename: 'js/[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    // filename: 'js/[name].[hash].js',
+    chunkFilename: '[id].[hash].chunk.js',
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
   },
 
   plugins: [
