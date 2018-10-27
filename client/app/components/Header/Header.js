@@ -10,12 +10,12 @@ const Header = () => (
         <Nav>
           <NavItem>
             <NavLink>
-              <Link to="/">Spellbook</Link>
+              <Link to="/">Home</Link>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <Link to="/helloworld">Hello World</Link>
+              <Link to="/book">Spellbook</Link>
             </NavLink>
           </NavItem>
         </Nav>

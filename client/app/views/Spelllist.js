@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Table, Button, Label, Input } from 'reactstrap';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from '../components/utils/API'
 
 
@@ -21,29 +21,29 @@ class Spelllist extends Component {
         )
     }
 
-    selectSpell(spell){
+    selectSpell(spell) {
         const selected = this.state.selected;
-        if(!!selected[spell._id]){
+        if (!!selected[spell._id]) {
             delete selected[spell._id];
-            return this.setState({selected: selected, selectAll: false});
+            return this.setState({ selected: selected, selectAll: false });
         }
 
-        selected[spell._id]= spell;
-        this.setState({selected: selected});
+        selected[spell._id] = spell;
+        this.setState({ selected: selected });
 
     }
 
-    selectAll(){
+    selectAll() {
         const selected = {};
 
-        if(this.state.selectAll){
-            return this.setState({selected: selected, selectAll: !this.state.selectAll});
+        if (this.state.selectAll) {
+            return this.setState({ selected: selected, selectAll: !this.state.selectAll });
         }
 
         this.state.spells.forEach(spell => {
             selected[spell._id] = spell
         });
-        this.setState({selected: selected, selectAll: !this.state.selectAll});
+        this.setState({ selected: selected, selectAll: !this.state.selectAll });
     }
 
     render() {
@@ -63,7 +63,7 @@ class Spelllist extends Component {
                                         <th>School</th>
                                         <th>
                                             <label className="check">
-                                                <input type="checkbox" onChange={this.selectAll.bind(this)} checked={this.state.selectAll}/>
+                                                <input type="checkbox" onChange={this.selectAll.bind(this)} checked={this.state.selectAll} />
                                                 <span className="checkmark"></span>
                                             </label>
                                         </th>
@@ -77,7 +77,7 @@ class Spelllist extends Component {
                                                 <tr key={spell._id} scope="row">
                                                     <th >
                                                         <Link to={"/spells/" + spell._id}>
-                                                            {spell.level}                                                           
+                                                            {spell.level}
                                                         </Link>
                                                     </th>
                                                     <td>{spell.name}</td>
@@ -86,7 +86,7 @@ class Spelllist extends Component {
                                                     <td>{spell.school}</td>
                                                     <td>
                                                         <label className="check">
-                                                            <input type="checkbox" onChange={this.selectSpell.bind(this,spell)} checked={!!this.state.selected[spell._id]}/>
+                                                            <input type="checkbox" onChange={this.selectSpell.bind(this, spell)} checked={!!this.state.selected[spell._id]} />
                                                             <span className="checkmark"></span>
                                                         </label>
                                                     </td>
@@ -112,8 +112,18 @@ class Spelllist extends Component {
                                     }
                                 </tbody>
                             </Table>
-                            <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
-                            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+                            <Link to="/book">
+                                <Button color = "primary" type="button">
+                                    Save
+                                </Button>
+                            </Link>
+                            <Link to="/user">
+                                <Button color = "danger" type="button">
+                                    Cancel
+                                </Button>
+                            </Link>
+                            {/* <Button color="primary" onclick="location.href='/user'">Save</Button>{' '} */}
+                            {/* <Button color="danger" onClick={this.toggle}>Cancel</Button> */}
 
                         </div>
                     </Col>

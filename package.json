@@ -53,6 +53,6 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "serviceworker-webpack-plugin": "^1.0.0-alpha02"
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
