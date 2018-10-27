@@ -60,8 +60,7 @@ if (isDev) {
   });
 }
 
-app.listen(process.env.PORT || 8080, (err) => {
-  console.log('express listening on port',this.port)
+app.listen(port, '0.0.0.0', (err) => {
   if (err) {
     console.log(err);
   }

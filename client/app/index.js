@@ -1,23 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import App from './components/App/App';
 import NotFound from './components/App/NotFound';
-
 import Home from './components/Home/Home';
-
 import HelloWorld from './components/HelloWorld/HelloWorld';
 import Userpage from './views/Userpage';
 import Spelllist from './views/Spelllist';
 import Spellbook from './views/Spellbook';
-
 import './styles/styles.scss';
 
 render((
