@@ -12,6 +12,7 @@ const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 
 const isDev = process.env.NODE_ENV !== 'production';
+const host = '0.0.0.0';
 const port  = process.env.PORT || 8080;
 
 
@@ -60,7 +61,7 @@ if (isDev) {
   });
 }
 
-app.listen(port, '0.0.0.0', (err) => {
+app.listen(port, host, (err) => {
   if (err) {
     console.log(err);
   }
