@@ -53,7 +53,7 @@ class Spellbook extends Component {
                 <Row>
                     <Col sm="12" md={{ size: 10, offset: 1 }}>
                         <Jumbotron>
-                            <h1 className="display-3">Welcome, User!</h1>
+                            <h1 className="display-3">Welcome, Nick!</h1>
                             <h3>Characters </h3>
                             <Row>
                                 {this.state.spells.length ?

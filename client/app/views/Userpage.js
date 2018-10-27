@@ -3,6 +3,8 @@ import { Container, Row, Col, Jumbotron, Table, ListGroup, ListGroupItem } from 
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import API from '../components/utils/API'
+import { Link } from "react-router-dom";
+
 
 
 
@@ -43,23 +45,14 @@ class Userpage extends Component {
                     <Col sm="12" md={{ size: 10, offset: 1 }}>
                         <div>
                             <Jumbotron>
-                                <h1 className="display-3">Welcome, User!</h1>
+                                <h1 className="display-3">Welcome, Nick!</h1>
                                 <p className="lead">Select your character:</p>
                                 <h3>Characters </h3>
 
                                 <ListGroup>
-                                    {/* <Link to={"/chars/" + char._id}>{char.name}</Link>
-                                    {this.state.chars.length ?
-                                        this.state.chars.map(char => {
-                                            return (
-                                                <ListGroupItem tag="button" action>{char.name}, {char.race}, {char.class}, {char.level} </ListGroupItem>
-                                            )
-                                        // })
-                                        : */}
-                                    {/* ( */}
-                                    <ListGroupItem tag="button" action>Didn't Load</ListGroupItem>
-                                    {/* ) */}
-                                    {/* } */}
+                                        <Link to="/book">  
+                                    <ListGroupItem tag="button" action>Gandalf</ListGroupItem>
+                                        </Link>
                                 </ListGroup>
                                 <hr className="my-2" />
                                 <p className="lead">
@@ -113,7 +106,9 @@ class Userpage extends Component {
                             </Form>
                         </ModalBody>
                         <ModalFooter>
+                            <Link to="/list">
                             <Button color="primary" onClick={this.toggle}>Save</Button>{' '}
+                            </Link>
                             <Button color="danger" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>

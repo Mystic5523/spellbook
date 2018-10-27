@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import { Container, Row, Col, Jumbotron, FormGroup, Form, FormText, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
+
 
 import {
   getFromStorage,
@@ -239,7 +241,9 @@ class Home extends Component {
                         onChange={this.onTextboxChangeSignInPassword}
                       />
                       <br />
+                      <Link to="/user">
                       <Button onClick={this.onSignIn}>Sign In</Button>
+                      </Link>
                     </div>
                     <br />
                     <br />
