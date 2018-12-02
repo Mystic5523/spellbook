@@ -21,7 +21,7 @@ const Header = () => (
         </Nav>
         <div className="mx-auto">
           <NavbarBrand>
-            <img src={logo} height="75" width="450" id="logo" />
+            <img src={logo} height="75" width="450" id="logo" class="img-fluid" />
           </NavbarBrand>
         </div>
         <hr />

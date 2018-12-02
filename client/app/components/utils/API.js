@@ -16,5 +16,10 @@ export default {
   // Saves a Spell to the database
   saveSpell: function(SpellData) {
     return axios.post("/api/spells", SpellData);
+  },
+  //
+  // Saves a new Character to the database
+  saveChar: function(CharData) {
+    return axios.post("/api/chars", CharData);
   }
 };

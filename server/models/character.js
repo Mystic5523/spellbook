@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
 const charSchema = new mongoose.Schema({
     name : {
@@ -19,6 +18,10 @@ const charSchema = new mongoose.Schema({
         type: Number,
         
     },
+    selectedSpells : {
+        type: Array,
+        default: empty,
+    }
 });
 
 const Char = mongoose.model("Char", charSchema);
