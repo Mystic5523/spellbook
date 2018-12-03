@@ -13,10 +13,6 @@ class Userpage extends Component {
 
     constructor(props) {
         super(props);
-        this.nameRef = React.createRef();
-        this.raceRef = React.createRef();
-        this.classRef = React.createRef();
-        this.levelRef = React.createRef();
         this.state = {
             modal: false,
             char: " ",
@@ -39,26 +35,9 @@ class Userpage extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value,
-            // race: event.target.value,
-            // class: event.target.value,
-            // level: event.target.value
         });
         console.log(this.state);
     };
-
-    // saveChar() {
-    //     event.preventDefault();
-    //     this.setState({
-    //         race: this.state.race
-    //     });
-    //     // const char = {
-    //     //     name: this.nameRef.value.value,
-    //     //     race: this.raceRef.value.value,
-    //     //     class: this.classRef.value.value,
-    //     //     level: this.levelRef.value.value
-    //     // }
-    //     console.log(this);
-    // }
 
     handleFormSubmit(event) {
         event.preventDefault();
@@ -71,7 +50,8 @@ class Userpage extends Component {
                 class: this.state.class,
                 level: this.state.level
             })
-                .then(res => this.loadBooks())
+                .then(console.log("yes"))
+                // .then(res => this.loadChars())
                 .catch(err => console.log(err));
         }
     };

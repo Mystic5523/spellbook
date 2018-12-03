@@ -200,6 +200,194 @@
           "name": "Land"
         }
       ]
+    },
+    {
+      "name": "Aid",
+      "desc": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each targetâ€™s hit point maximum and current hit points increase by 5 for the duration.",
+      "higher_level": "When you cast this spell using a spell slot of 3rd level or higher, a targetâ€™s hit points increase by an additional 5 for each slot level above 2nd.",
+      "page": "phb 211",
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "A tiny strip of white cloth.",
+      "ritual": "no",
+      "duration": "8 hours",
+      "concentration": "no",
+      "casting_time": "1 action",
+      "level": 2,
+      "school": "Abjuration",
+      "classes": [
+        {
+          "name": "Cleric"
+        },
+        {
+          "name": "Paladin"
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Lore"
+        }
+      ]
+    },
+    {
+      "name": "Mage Hand",
+      "desc": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again. You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it. The hand canâ€™t attack, activate magic items, or carry more than 10 pounds.",
+      "page": "phb 256",
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "ritual": "no",
+      "duration": "1 minute",
+      "concentration": "no",
+      "casting_time": "1 action",
+      "level": 0,
+      "school": "Conjuration",
+      "classes": [
+        {
+          "name": "Bard"
+        },
+        {
+          "name": "Sorcerer"
+        },
+        {
+          "name": "Warlock"
+        },
+        {
+          "name": "Wizard"
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Lore"
+        }
+      ]
+    },
+    {
+      "name": "Find Familiar",
+      "desc": "You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast. Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal. When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again. While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses. As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. You can’t have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature. Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your action modifier for the roll.",
+      "page": "phb 240",
+      "range": "10 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "10gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier.",
+      "ritual": "yes",
+      "duration": "Instantaneous",
+      "concentration": "no",
+      "casting_time": "1 hour",
+      "level": 1,
+      "school": "Conjuration",
+      "classes": [
+        {
+          "name": "Wizard"
+        }
+      ],
+      "subclasses": []
+    },
+    {
+      "name": "Tiny Hut",
+      "desc": "A 10-foot-radius immobile dome of force springs into existence around and above you and remains stationary for the duration. The spell ends if you leave its area. Nine creatures of Medium size or smaller can fit inside the dome with you. The spell fails if its area includes a larger creature or more than nine creatures. Creatures and objects within the dome when you cast this spell can move through it freely. All other creatures and objects are barred from passing through it. Spells and other magical effects canâ€™t extend through the dome or be cast through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside. Until the spell ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside.",
+      "page": "phb 255",
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "A small crystal bead.",
+      "ritual": "yes",
+      "duration": "8 hours",
+      "concentration": "no",
+      "casting_time": "1 minute",
+      "level": 3,
+      "school": "Evocation",
+      "classes": [
+        {
+          "name": "Bard"
+        },
+        {
+          "name": "Wizard"
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Lore"
+        }
+      ]
+    },
+    {
+      "name": "Animate Dead",
+      "desc": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creatureâ€™s game statistics). On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete. The creature is under your control for 24 hours, after which it stops obeying any command youâ€™ve given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
+      "higher_level": "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
+      "page": "phb 212",
+      "range": "10 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "A drop of blood, a piece of flesh, and a pinch of bone dust.",
+      "ritual": "no",
+      "duration": "Instantaneous",
+      "concentration": "no",
+      "casting_time": "1 minute",
+      "level": 3,
+      "school": "Necromancy",
+      "classes": [
+        {
+          "name": "Cleric"
+        },
+        {
+          "name": "Wizard"
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Lore"
+        }
+      ]
+    },
+    {
+      "name": "Haste",
+      "desc": "Choose a willing creature that you can see within range. Until the spell ends, the targetâ€™s speed is doubled, it gains a +2 bonus to AC, it has advantage on dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. When the spell ends, the target canâ€™t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+      "page": "phb 250",
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "A shaving of licorice root.",
+      "ritual": "no",
+      "duration": "Up to 1 minute",
+      "concentration": "yes",
+      "casting_time": "1 action",
+      "level": 3,
+      "school": "Transmutation",
+      "classes": [
+        {
+          "name": "Sorcerer"
+        },
+        {
+          "name": "Wizard"
+        }
+      ],
+      "subclasses": [
+        {
+          "name": "Lore"
+        },
+        {
+          "name": "Land"
+        }
+      ]
     }
   ]
 
