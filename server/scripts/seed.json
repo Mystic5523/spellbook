@@ -388,6 +388,24 @@
           "name": "Land"
         }
       ]
+    },
+    {
+      "name": "Hero",
+      "race": "Halfling",
+      "class": "Wizard",
+      "level": 3
+    },
+    {
+      "name": "Aaron",
+      "race": "Dwarf",
+      "class": "Wizard",
+      "level": 1
+    },
+    {
+      "name": "Nick",
+      "race": "Elf",
+      "class": "Warlock",
+      "level": 5
     }
   ]
 

@@ -1,3 +1,4 @@
 module.exports = {
-    Spelllist: require("./Spelllist")
+    Spelllist: require("./Spelllist"),
+    Chars: require("./Chars")
 };

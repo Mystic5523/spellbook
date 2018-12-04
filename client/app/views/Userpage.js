@@ -14,8 +14,9 @@ class Userpage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            chars: [],
             modal: false,
-            char: " ",
+            name: " ",
             race: " ",
             class: " ",
             level: " "
@@ -32,6 +33,13 @@ class Userpage extends Component {
         });
     }
 
+    componentDidMount() {
+        API.getChars().then(res => {
+            this.setState({ chars: res.data });
+        }
+        )
+    };
+
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value,
@@ -42,18 +50,15 @@ class Userpage extends Component {
     handleFormSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-
-        if (this.state.name && this.state.level) {
-            API.saveChar({
-                name: this.state.name,
-                race: this.state.race,
-                class: this.state.class,
-                level: this.state.level
-            })
-                .then(console.log("yes"))
-                // .then(res => this.loadChars())
-                .catch(err => console.log(err));
-        }
+        API.saveChar({
+            name: this.state.name,
+            race: this.state.race,
+            class: this.state.class,
+            level: this.state.level
+        })
+            .then(console.log("yes"))
+            .then(res => this.getChars())
+            .catch(err => console.log(err));
     };
 
     render() {
@@ -66,19 +71,35 @@ class Userpage extends Component {
                                 <h1 className="display-3">Welcome, Nick!</h1>
                                 <p className="lead">Select your character:</p>
                                 <h3>Characters </h3>
-
                                 <ListGroup>
-                                        <Link to="/book">  
-                                    <ListGroupItem className="justify-content-between" tag="button" className="clearfix" action>Gandalf
-                                    
-                                    <Button color="primary" className="float-right"> Edit</Button>
-                                    </ListGroupItem>
-                                        </Link>
+                                    {this.state.chars.length ?
+                                        this.state.chars.map(chars => {
+                                            return (
+                                            <div>
+                                                <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
+                                                {chars.name} {chars.race} {chars.class} {chars.level}
+                                                <Button color="primary" className="float-right"> Edit</Button>
+                                                </ListGroupItem>
+                                            </div>
+                                            )
+                                        })
+                                        :
+                                        (
+                                            <div>
+                                                <Link to="/book">  
+                                                <ListGroupItem className="justify-content-between" tag="button" className="clearfix" action>Gandalf
+                                            
+                                                <Button color="primary" className="float-right"> Edit</Button>
+                                                </ListGroupItem>
+                                                </Link>
+                                            </div>
+                                        )
+                                    }
                                 </ListGroup>
                                 <hr className="my-2" />
-                                <p className="lead">
-                                    <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}New Character</Button>
-                                </p>
+                                            <p className="lead">
+                                                <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}New Character</Button>
+                                            </p>
                             </Jumbotron>
                         </div>
                     </Col>
@@ -90,7 +111,7 @@ class Userpage extends Component {
                             <Form onSubmit={this.handleFormSubmit}>
                                 <FormGroup>
                                     <Label for="characterName">Name</Label>
-                                    <Input type="text" name="char" value={this.state.char} onChange={this.handleChange} id="characterName" placeholder="Character's Name" />
+                                    <Input type="text" name="name" value={this.state.name} onChange={this.handleChange} id="characterName" placeholder="Character's Name" />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="characterRace">Race</Label>

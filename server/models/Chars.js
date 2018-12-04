@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const charSchema = new mongoose.Schema({
+const CharsSchema = new mongoose.Schema({
     name : {
         type: String,
         validation: {
@@ -20,10 +20,12 @@ const charSchema = new mongoose.Schema({
     },
     selectedSpells : {
         type: Array,
-        default: empty,
+        default: [],
     }
-});
+}, {collection: 'chars' });
 
-const Char = mongoose.model("Char", charSchema);
+module.exports = mongoose.model('Chars', CharsSchema);
 
-module.export = Char;
+// const Char = mongoose.model("Char", CharSchema);
+
+// module.export = Char;

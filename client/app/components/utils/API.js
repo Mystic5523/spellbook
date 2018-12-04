@@ -19,7 +19,10 @@ export default {
   },
   //
   // Saves a new Character to the database
-  saveChar: function(charData) {
-    return axios.post("/api/chars", charData);
+  saveChar: function(CharData) {
+    return axios.post("/api/chars", CharData);
+  },
+  getChars: function() {
+    return axios.get("/api/chars");
   }
 };
