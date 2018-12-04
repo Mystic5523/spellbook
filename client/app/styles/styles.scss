@@ -37,18 +37,23 @@
 
 .jumbotron {
     background-color: lighten(#343a40, 15%)!important;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0), rgba(10, 0, 0, 0.4));
+    background-image: radial-gradient(rgba(10,0,0,.4), rgba(100, 1, 1, .15));
 }
 
 .card {
     background-color: #efe5d5!important;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0), rgba(10, 8, 0, .5));
+    background-image: radial-gradient(rgba(0,0,0,0), rgba(10, 8, 0, .3));
     color: #343a40;
+}
+
+.navbar {
+    background-image: radial-gradient(rgba(10,0,0,.4), rgba(100, 1, 1, .15));
+
 }
 
 .modal-body {
     background-color: lighten(#343a40, 15%)!important;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0), rgba(10, 0, 0, .5));
+    background-image: radial-gradient(rgba(10,0,0,.4), rgba(100, 1, 1, .15));
     color: #dee2e6;
 }
 
@@ -90,7 +95,7 @@ $enable-gradients: true;
 
 body {
     background-color: #343a40;
-    background-image: linear-gradient(135deg, rgba(0,0,0,0), rgba(100,1,1, 0.4)), url('./large-leather.png');
+    background-image: radial-gradient(rgba(10,0,0,.4), rgba(100, 1, 1, .15)), url('./large-leather.png');
     color: #dee2e6;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -160,5 +165,15 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+
+    .intro {
+        display: inline-block;
+        margin: 0 auto;
+    }
 }
 

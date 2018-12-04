@@ -24,5 +24,8 @@ export default {
   },
   getChars: function() {
     return axios.get("/api/chars");
+  },
+  deleteChar: function(id) {
+    return axios.delete("/api/chars/" + id);
   }
 };

@@ -66,7 +66,7 @@ app.listen(port, host, (err) => {
     console.log(err);
   }
 
-  console.info('>>> 🌎 Open http://0.0.0.0:%s/ in your browser.', port);
+  console.info('>>> 🌎 Open http://localhost:%s/ in your browser.', port);
 });
 
 module.exports = app;

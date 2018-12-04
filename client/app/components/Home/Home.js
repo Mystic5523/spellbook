@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import { Container, Row, Col, Jumbotron, FormGroup, Form, FormText, Button } from 'reactstrap';
+import { Container, Row, Col, Jumbotron, FormGroup, Form, FormText, Button, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 
@@ -218,23 +218,23 @@ class Home extends Component {
             <Col sm="12" md={{ size: 10, offset: 1 }}>
               <Jumbotron>
                 <h1 className="display-3">Welcome!!</h1>
-                <Row>
-                  <div>
+                <Row className="center">
+                  <div className="intro">
                     <div>
                       {
                         (signInError) ? (
                           <p>{signInError}</p>
                         ) : (null)
                       }
-                      <p>Sign In</p>
-                      <input
+                      <h3>Sign In</h3>
+                      <Input
                         type="email"
                         placeholder="Username"
                         value={signInEmail}
                         onChange={this.onTextboxChangeSignInEmail}
                       />
                       <br />
-                      <input
+                      <Input
                         type="password"
                         placeholder="Password"
                         value={signInPassword}
@@ -242,7 +242,7 @@ class Home extends Component {
                       />
                       <br />
                       <Link to="/user">
-                      <Button onClick={this.onSignIn}>Sign In</Button>
+                      <Button color="primary" onClick={this.onSignIn}>Sign In</Button>
                       </Link>
                     </div>
                     <br />
@@ -253,20 +253,20 @@ class Home extends Component {
                           <p>{signUpError}</p>
                         ) : (null)
                       }
-                      <p>Sign Up</p>
-                      <input
+                      <h3>Sign Up</h3>
+                      <Input
                         type="email"
                         placeholder="Username"
                         value={signUpEmail}
                         onChange={this.onTextboxChangeSignUpEmail}
                       /><br />
-                      <input
+                      <Input
                         type="password"
                         placeholder="Password"
                         value={signUpPassword}
                         onChange={this.onTextboxChangeSignUpPassword}
                       /><br />
-                      <Button onClick={this.onSignUp}>Sign Up</Button>
+                      <Button color="primary" onClick={this.onSignUp}>Sign Up</Button>
                     </div>
 
                   </div>

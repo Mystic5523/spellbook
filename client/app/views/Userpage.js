@@ -66,11 +66,11 @@ class Userpage extends Component {
             .catch(err => console.log(err));
     };
 
-    // deleteBook = id => {
-    //     API.deleteBook(id)
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    // };
+    deleteChar(id) {
+        API.deleteChar(id)
+            .then(res => this.loadChars(), console.log("All gone"))
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (
@@ -89,7 +89,7 @@ class Userpage extends Component {
                                             <div>
                                                 <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
                                                 {chars.name} {chars.race} {chars.class} {chars.level}
-                                                <Button color="danger" className="float-right"> Delete</Button>
+                                                <Button color="danger" className="float-right" onClick={() => this.deleteChar(chars._id)}> Delete</Button>
                                                 <Link to="/list">
                                                 <Button color="primary" className="float-right"> Edit</Button>
                                                 </Link>
@@ -102,7 +102,7 @@ class Userpage extends Component {
                                             <div>
                                                 <Link to="/book">  
                                                 <ListGroupItem className="justify-content-between" tag="button" className="clearfix" action>Gandalf
-                                            
+                                                <Button color="danger" className="float-right"> Delete</Button>
                                                 <Button color="primary" className="float-right"> Edit</Button>
                                                 </ListGroupItem>
                                                 </Link>
@@ -112,7 +112,7 @@ class Userpage extends Component {
                                 </ListGroup>
                                 <hr className="my-2" />
                                             <p className="lead">
-                                                <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}New Character</Button>
+                                                <Button color="primary" onClick={this.toggle}>New Character</Button>
                                             </p>
                             </Jumbotron>
                         </div>

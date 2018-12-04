@@ -4,12 +4,12 @@ const charsController = require("../../controllers/charsController");
 // Matches with "/api/chars"
 router.route("/")
     .get(charsController.findAll)
-    // .post(charsController.create);
+    .post(charsController.create);
 
 // Matches with "/api/chars/:id"
-router.route("/")
-    .post(charsController.create);
+router.route("/:id")
+    // .post(charsController.create)
 //     .put(charsController.update)
-//     .delete(charsController.remove);
+    .delete(charsController.remove);
 
 module.exports = router;
