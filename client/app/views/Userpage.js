@@ -66,6 +66,12 @@ class Userpage extends Component {
             .catch(err => console.log(err));
     };
 
+    // deleteBook = id => {
+    //     API.deleteBook(id)
+    //         .then(res => this.loadBooks())
+    //         .catch(err => console.log(err));
+    // };
+
     render() {
         return (
             <Container fluid={true}>
@@ -83,6 +89,7 @@ class Userpage extends Component {
                                             <div>
                                                 <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
                                                 {chars.name} {chars.race} {chars.class} {chars.level}
+                                                <Button color="danger" className="float-right"> Delete</Button>
                                                 <Link to="/list">
                                                 <Button color="primary" className="float-right"> Edit</Button>
                                                 </Link>
