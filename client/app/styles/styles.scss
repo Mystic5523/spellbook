@@ -177,3 +177,18 @@ body {
     }
 }
 
+.chstyle {
+    color: rgb(100, 1, 1);
+
+    .chname {
+        color: lighten(rgb(100, 1, 1), 15%)
+    }
+
+    .chrace {
+        color: lighten(rgb(100, 1, 1), 8%)
+    }
+
+    .chlevel {
+        color: darken(rgb(100, 1, 1), 8%)
+    }
+}

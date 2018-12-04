@@ -119,12 +119,12 @@ class Spelllist extends Component {
                                 </Button>
                             {/* </Link> */}
                             {/* <Link to="/user"> */}
-                                <Button color = "danger" type="button">
+                                <Button color = "dark" type="button">
                                     Cancel
                                 </Button>
                             {/* </Link> */}
                             {/* <Button color="primary" onclick="location.href='/user'">Save</Button>{' '} */}
-                            {/* <Button color="danger" onClick={this.toggle}>Cancel</Button> */}
+                            {/* <Button color="dark" onClick={this.toggle}>Cancel</Button> */}
 
                         </div>
                     </Col>

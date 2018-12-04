@@ -87,13 +87,14 @@ class Userpage extends Component {
                                         this.state.chars.map(chars => {
                                             return (
                                             <div>
-                                                <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
-                                                {chars.name} {chars.race} {chars.class} {chars.level}
-                                                <Button color="danger" className="float-right" onClick={() => this.deleteChar(chars._id)}> Delete</Button>
                                                 <Link to="/list">
+                                                <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
+                                                <h5 className="chstyle"> <span className="chname">{chars.name}</span> &bull; <span className="chrace">{chars.race}</span> &bull; <span className="chclass">{chars.class}</span> &bull; <span className="chlevel">{chars.level}</span>
+                                                <Button color="dark" className="float-right" onClick={() => this.deleteChar(chars._id)}> Delete</Button>
                                                 <Button color="primary" className="float-right"> Edit</Button>
-                                                </Link>
+                                                </h5>
                                                 </ListGroupItem>
+                                                </Link>
                                             </div>
                                             )
                                         })
@@ -102,7 +103,7 @@ class Userpage extends Component {
                                             <div>
                                                 <Link to="/book">  
                                                 <ListGroupItem className="justify-content-between" tag="button" className="clearfix" action>Gandalf
-                                                <Button color="danger" className="float-right"> Delete</Button>
+                                                <Button color="dark" className="float-right"> Delete</Button>
                                                 <Button color="primary" className="float-right"> Edit</Button>
                                                 </ListGroupItem>
                                                 </Link>
@@ -159,7 +160,7 @@ class Userpage extends Component {
                                         <option value="5">5</option>
                                     </Input>
                                 </FormGroup>
-                                <Button className="float-right" color="danger" onClick={this.toggle}>Cancel</Button>
+                                <Button className="float-right" color="dark" onClick={this.toggle}>Cancel</Button>
                                 <Button className="float-right" type="submit" color="primary" onClick={this.toggle}>Save</Button>
                             </Form>
                         </ModalBody>
