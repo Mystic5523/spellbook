@@ -34,11 +34,16 @@ class Userpage extends Component {
     }
 
     componentDidMount() {
-        API.getChars().then(res => {
-            this.setState({ chars: res.data });
-        }
-        )
+        this.loadChars();
     };
+
+    loadChars() {
+        API.getChars()
+            .then(res =>
+                this.setState({ chars: res.data })
+            )
+            .catch(err => console.log(err));
+        };
 
     handleChange(event) {
         this.setState({
@@ -57,7 +62,7 @@ class Userpage extends Component {
             level: this.state.level
         })
             .then(console.log("yes"))
-            .then(res => this.getChars())
+            .then(res => this.loadChars())
             .catch(err => console.log(err));
     };
 
@@ -78,7 +83,9 @@ class Userpage extends Component {
                                             <div>
                                                 <ListGroupItem key={chars._id} className="justify-content-between" tag="button" className="clearfix" action>
                                                 {chars.name} {chars.race} {chars.class} {chars.level}
+                                                <Link to="/list">
                                                 <Button color="primary" className="float-right"> Edit</Button>
+                                                </Link>
                                                 </ListGroupItem>
                                             </div>
                                             )

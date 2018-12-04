@@ -11,6 +11,7 @@ class Spelllist extends Component {
             spells: [],
             selected: {},
             selectAll: false,
+            // char: this.char._id
         }
     }
 
