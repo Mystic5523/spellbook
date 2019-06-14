@@ -18,7 +18,7 @@ $ npm install
 ```
 $ npm node
 ```
-6. Open your webbrowser to [localhost/8080](localhost/8080)
+6. Open your webbrowser to localhost/8080.
 
 
 
