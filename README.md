@@ -23,3 +23,5 @@ $ npm node
 
 
 A place for you to build and track personalized spellbooks for your D&D 5e characters. (DEMO)
+
+If it can't get a connection to the database, it will display a minimal display of a few selected characters and spells.
